@@ -1,0 +1,29 @@
+name: CI 
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs_on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@4
+
+      - uses: pnpm/action-setup@4
+
+      - uses: actions/setup-node@4
+        with:
+          node-version: 24
+          cache: pnpm
+      
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm lint
+      - run: pnpm build
+      - run: pnpm typecheck
