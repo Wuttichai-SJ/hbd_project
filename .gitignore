@@ -1,0 +1,47 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# build
+build/
+dist/
+*.tsbuildinfo
+
+# env (ห้าม commit ยกเว้น .env.example)
+.env*
+!.env.example
+*.pem
+
+# vercel / supabase local
+.vercel/
+supabase/.temp/
+supabase/.branches/
+
+# test output
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# sentry
+.sentryclirc
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# claude code (ค่าส่วนตัวของเครื่อง)
+.claude/settings.local.json
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
